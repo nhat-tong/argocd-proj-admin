@@ -13,7 +13,8 @@ spec:
     - description: project admin
       name: admin
       policies:
-      - p, proj:my-project:admin, *, *, my-project/*, allow
-      - p, proj:my-project:admin, *, *, my-project, allow
+      - p, proj:my-project:admin, applications, *, my-project/*, allow
+      - p, proj:my-project:admin, repositories, *, my-project/*, allow
+      - p, proj:my-project:admin, clusters, *, my-project/*, allow
       groups:
       - argocd-project1-admin
