@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: my-project
+  namespace: argocd
+spec:
+  destinations:
+    - namespace: voting-app
+      server: https://kubernetes.default.svc
+  sourceRepos:
+    - '*'
+  roles:
+    - description: project admin
+      name: admin
+      policies:
+      - p, proj:my-project:admin, *, *, my-project/*, allow
+      - p, proj:my-project:admin, *, *, my-project, allow
+      groups:
+      - argocd-project1-admin
