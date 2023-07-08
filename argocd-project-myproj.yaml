@@ -13,7 +13,6 @@ spec:
     - description: project admin
       name: admin
       policies:
-      - p, proj:my-project:admin, projects, update, my-project, allow
       - p, proj:my-project:admin, applications, *, my-project/*, allow
       - p, proj:my-project:admin, repositories, *, my-project/*, allow
       - p, proj:my-project:admin, clusters, *, my-project/*, allow
